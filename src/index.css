@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+
+}
+.nav-pills .nav-item .nav-link.router-link-active {
+    background-color: rgba(31, 133, 81, 0.8);
+    color: white;
+  }
+
+.nav-pills .nav-item .nav-link:visited {
+  color: white;
+}
+
+.greenColor {
+  background-color: rgba(31, 133, 81, 0.8);
+}
+.blackColor {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.form {
+  width: 740px;
+}
+.form button {
+  width: 200px;
+}
+
+ol{
+  list-style-position: inside !important;
+}
+.card-img-top {
+  height: 18rem !important;
+  object-fit: cover !important;
+}
+
+.modal-content-component {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+
+}
+
+.warning-message-modal {
+  padding: 0;
+  width: 320px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+}
+
+.image-modal {
+  width: 90% !important;
+  height: 85vh;
+  object-fit: cover;
+}
+
+i {
+  font-size: 32px;
+}
+.black {
+    color: black;
+}
+.red {
+    color: red;
+}
+
+@media (max-width: 767px) {
+  .form {
+    width: 98%;
+  }
+}
+
+@media(max-width: 767px) {
+	.table, .table tbody, .table tr, .table td{
+	display: block;
+	width: 100%;
+}
+
+.table thead {
+	display: none;
+}
+
+.table tbody {
+  border: none !important;
+}
+
+.table tr{
+	margin-bottom: 15px;
+}
+
+.table tbody tr td {
+	border-radius: 10px;
+	border: 1px solid #DEE2E6;
+	text-align: right;
+	padding-left: 50%;
+	position: relative; 
+}
+
+.table td:before {
+	content: attr(data-label);
+	position: absolute;
+	left: 0;
+	width: 50%;
+	padding-left: 15px;
+	text-align: left;
+	font-weight: 900;
+	color: rgba(0, 0, 139, 0.7);
+}
+}
+
+@media(max-width: 400px) {
+  html {
+    font-size: 14px;
+  }
+  .warning-message-modal {
+    width: 96%;
+  }
+}
