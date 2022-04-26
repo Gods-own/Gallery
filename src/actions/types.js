@@ -4,6 +4,19 @@ export const FETCH_ALBUMS = 'FETCH_ALBUMS';
 
 export const FETCH_PHOTOS = 'FETCH_PHOTOS';
 
+export const FETCH_PHOTO = 'FETCH_PHOTO';
+
 export const NEW_PHOTO = 'NEW_PHOTO';
 
 export const UPDATED_PHOTO = 'UPDATE_PHOTO';
+
+export const FETCH_LIKED_PHOTOS = 'FETCH_LIKED_PHOTOS';
+
+export const NEW_LIKED_PHOTO = 'NEW_LIKED_PHOTO';
+
+export const DELETE_LIKED_PHOTO = 'DELETE_LIKED_PHOTO ';
+
+export const DELETE_LIKED_PHOTO_WITH_ID = 'DELETE_LIKED_PHOTO_WITH_ID';
+
+export const CLEAR_LIKED_PHOTOS = 'CLEAR_LIKED_PHOTOS';
+

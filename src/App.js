@@ -6,6 +6,7 @@ import Users from './components/users';
 import Albums from './components/albums';
 import Photos from './components/photos';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import LikedPhotos from './components/likedPhotos';
 
 class App extends Component {
   render() {
@@ -40,7 +41,7 @@ class App extends Component {
                 <Route path="/" element={<Users />} />
                 <Route path="/user-albums/:userId" element={<Albums />} />
                 <Route path="/album-photos/:albumId" element={<Photos />} />
-                <Route path="/favourite-photos" />
+                <Route path="/favourite-photos" element={<LikedPhotos />} />
               </Routes>
             </div>  
           </BrowserRouter>

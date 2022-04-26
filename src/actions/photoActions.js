@@ -1,4 +1,4 @@
-import { FETCH_PHOTOS, NEW_PHOTO, UPDATED_PHOTO } from "./types";
+import { FETCH_PHOTOS, NEW_PHOTO, UPDATED_PHOTO, FETCH_PHOTO } from "./types";
 import axios from 'axios';
 
 export const fetchPhotos = (albumId) => dispatch => {
@@ -9,7 +9,8 @@ export const fetchPhotos = (albumId) => dispatch => {
     }))
 }
 
-export const createPhoto = ({ title, url, albumId }) => dispatch => {
+export const createPhoto = ({ title, url, albumId }) => (dispatch, getState) => {
+    const { photos } = getState()
     axios.post(
         `https://jsonplaceholder.typicode.com/photos`,
 
@@ -17,17 +18,27 @@ export const createPhoto = ({ title, url, albumId }) => dispatch => {
         )
         .then(response => dispatch({
             type: NEW_PHOTO,
-            payload: response.data
+            payload: response.data,
+            allPhotos: photos.photos
         }))
 }
 
-export const updPhoto = (updatedPhoto) => dispatch => {
+export const updPhoto = (updatedPhoto) => (dispatch, getState) => {
+    const { photos } = getState()
     axios.put(
         `https://jsonplaceholder.typicode.com/photos/${updatedPhoto.id}`,
         updatedPhoto
     )
     .then(response => dispatch({
         type: UPDATED_PHOTO,
-        payload: response.data
+        payload: response.data,
+        allPhotos: photos.photos
     }))
+}
+
+export const fetchPhoto = (clickedImage) => dispatch => {
+    dispatch({
+        type: FETCH_PHOTO,
+        payload: clickedImage
+    })
 }
